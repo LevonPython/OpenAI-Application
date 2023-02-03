@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+  <title>Image Variation</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='image_gen.png') }}"
+  />
+  <link
+    rel="return icon"
+    gref="{{ url_for('static', filename='Return.png') }}"
+  /> 
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+</head>
+
+<body>
+    <div class="return_div">
+    <a href='/img_intro'>
+      <img src="{{ url_for('static', filename='Return.png') }}" class="return" />
+    </a>
+    </div>
+  <img src="{{ url_for('static', filename='image_gen.png') }}" class="img_icon" />
+  <h3>Image Variation</h3>
+  <form action="/img_var" method="post" enctype="multipart/form-data">
+    <label for="file">Select a image:</label>
+    <input type="file" name="file" required accept=".jpg, .jpeg, .png">
+    <input type="submit" value="Generate an image variation" />
+  </form>
+  {% if result %}
+  <div class="introduction">
+      <div class="images-examples">
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="{{ url_for('static', filename='cat_and_dog.png') }}" class="cat_and_dog" />
+                    </td>
+                    <td>
+                        <img src="{{ result }}" class="cat_and_dog_output" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+  </div>
+
+  {% else %}
+  <div class="introduction">
+      <div class="images-examples">
+          The image variations endpoint allows you to generate a variation of a given image.
+    </br>
+    <b>Example:</b>
+      </br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Output</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="{{ url_for('static', filename='cat_and_dog.png') }}" class="cat_and_dog" />
+                    </td>
+                    <td>
+                        <img src="{{ url_for('static', filename='cat_and_dog_output.png') }}" class="cat_and_dog_output" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            The uploaded image must be square PNG images less than 4MB in size.
+        </div>
+      </div>
+  </div>
+
+  {% endif %}
+</body>

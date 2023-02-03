@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+  <title>QA</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='qa.png') }}"
+  />
+  <link
+    rel="return icon"
+    gref="{{ url_for('static', filename='Return.png') }}"
+  /> 
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+</head>
+
+<body>
+    <div class="return_div">
+    <a href='/'>
+      <img src="{{ url_for('static', filename='Return.png') }}" class="return" />
+    </a>
+    </div>
+  <img src="{{ url_for('static', filename='qa.png') }}" class="qa_icon" />
+  <h3>Ask me questions</h3>
+  <form action="/qa" method="post">
+    <input type="text" name="question" placeholder="Write a question" required />
+    <input type="submit" value="Generate answer" />
+  </form>
+  {% if result %}
+  <div class="question">
+      </br>
+       <b>Qustion:</b> {{ question  }}
+  </div>
+  <div class="result">
+      <b>Answer:</b> {{ result }}
+  </div>
+  {% else %}
+  <div class="introduction">
+      </br>
+      <b>QA-Bot:</b> Hi, I am a highly intelligent question answering bot.</br> 
+      If you ask me a question that is rooted in truth, I will give you the answer.</br>
+      If you ask me a question that is nonsense, trickery, or has no clear answer, I will respond with "Unknown".</div>
+  {% endif %}
+</body>

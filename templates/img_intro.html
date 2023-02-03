@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+  <title>Image Introduction</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='image_gen.png') }}"
+  />
+  <link
+    rel="return icon"
+    gref="{{ url_for('static', filename='Return.png') }}"
+  /> 
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+</head>
+
+<body>
+    <div class="return_div">
+    <a href='/'>
+      <img src="{{ url_for('static', filename='Return.png') }}" class="return" />
+    </a>
+    </div>
+  <img src="{{ url_for('static', filename='image_gen.png') }}" class="img_icon" />
+  <h3>Image generation</h3>
+  <div>
+     Generate or manipulate images with our DALL·E models
+ </div>
+  <h4>Introduction</h4>
+  <div>
+      The Images API provides three methods for interacting with images:
+  </div>
+  <div>
+    <ol>
+        <li>
+            <a href='/img'>Creating images</a> from scratch based on a text prompt
+        </li>
+        <li>
+            <a href='/img_edit'>Creating edits</a> of an existing image based on a new text prompt
+        </li>
+        <li>
+            <a href="/img_var">Creating variations</a> of an existing image
+        </li>
+    </ol>
+  </div>
+ 
+</body>

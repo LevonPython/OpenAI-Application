@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+  <title>OpenAI Quickstart</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='dog.png') }}"
+  />
+  <link
+    rel="return icon"
+    gref="{{ url_for('static', filename='Return.png') }}"
+  /> 
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+</head>
+
+<body>
+    <div class="return_div">
+    <a href='/'>
+      <img src="{{ url_for('static', filename='Return.png') }}" class="return" />
+    </a>
+    </div>
+  <img src="{{ url_for('static', filename='dog.png') }}" class="dog_icon" />
+  <h3>Name my pet</h3>
+  <form action="/animal" method="post">
+    <input type="text" name="animal" placeholder="Enter an animal" required />
+    <input type="submit" value="Generate names" />
+  </form>
+  {% if result %}
+  <div class="result">{{ result }}</div>
+  {% endif %}
+</body>

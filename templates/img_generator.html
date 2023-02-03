@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+  <title>Image Generator</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='image_gen.png') }}"
+  />
+  <link
+    rel="return icon"
+    gref="{{ url_for('static', filename='Return.png') }}"
+  /> 
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+</head>
+
+<body>
+    <div class="return_div">
+    <a href='/img_intro'>
+      <img src="{{ url_for('static', filename='Return.png') }}" class="return" />
+    </a>
+    </div>
+  <img src="{{ url_for('static', filename='image_gen.png') }}" class="img_icon" />
+  <h3>Image Generator</h3>
+  <form action="/img" method="post">
+    <input type="text" name="prompt" placeholder="Write a text" required />
+    <input type="submit" value="Generate Image" />
+  </form>
+  {% if result %}
+  <div class="prompt">
+      </br>
+       <b>Prompt:</b> {{ prompt  }}
+  </div>
+  <div class="result">
+      <b>Response:</b> 
+      <img src="{{ result }}" class="image_gen_new"/>
+  </div>
+  {% else %}
+  <div class="introduction">
+      <b>Example:</b>
+      </br>
+      <b>Prompt:</b> 
+      A white siamese cat
+  <br/>
+     <b>Generation:</b> 
+     <img src="{{ url_for('static', filename='image_generation_sample.png') }}" class="image_gen_sample" />
+  </div>
+
+  {% endif %}
+</body>

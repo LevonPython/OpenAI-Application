@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OpenAI Application Examples</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='examples.css') }}" />
+<link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='chatgpt.png') }}"
+  />
+    </head>
+    <body>
+        <div class="pheader">
+            <div class="pheader-container">
+                <div class="pheader-left">
+                    <img width="25px" height="25px" src="{{ url_for('static', filename='chatgpt.png')}}" />
+                        <div class="pheader-nav pheader-menu-active">
+                            <a class="nav-item active" href="/">Overview</a>
+                            <a class="nav-item" href="/docs">Documentation</a>
+                            <a class="nav-item" href="/examples">Examples</a>
+                        </div>
+                </div>
+                <div class="pheader-right">
+                </div>
+            </div>
+        </div>
+        <div class="main_container">
+            <h1>OpenAI Application Examples</h1>
+                <div class="text-tagline">
+                    <h3>Try out some example applications</h3>
+                </div>
+                <div class="examples">
+                        <div role="button" class="icon-item">
+                             <div class="icon-item-icon orange_gradient_bg">
+                                <img  width="50" height="50" src="{{ url_for('static', filename='dog.png') }}" class="dog_icon" />
+                            </div>
+                            <div class="icon-item-right">
+                                <div class="icon-item-title body-large bold">
+                                    Pet's Name
+                                </div>
+                               <div class="icon-item-desc body-small">
+                                    <a href="/animal" target="_blank">Get recommended names for your Pet</a>
+                               </div>
+                            </div>
+                        </div>
+                        <div role="button" class="icon-item">
+                            <div class="icon-item-icon orange-gradient-bg">
+                                    <svg width="50" height="50">
+                                    <rect width="50" height="45" style="fill: #da8904; stroke: #da8904; stroke-width: 2;opacity:0.8;" rx="5" ry="5">
+                                    </rect>
+                                    <text x="20" y="28" fill="white" font-weight="bold" font-size=20px>?</text>
+                                </svg>
+                            </div>
+                            <div class="icon-item-right">
+                                <div class="icon-item-title body-large bold">
+                                    Q&A
+                                </div>
+                                <div class="icon-item-desc body-small">
+                                    <a href="/qa" target="_blank">Answers questions based on existing knowledge.</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="button" class="icon-item">
+                            <div class="icon-item-icon summariz-icon">
+                                <img  width="50" height="50" src="{{ url_for('static', filename='summarize.png') }}" class="summarize_icon" />
+                            </div>
+                            <div class="icon-item-right">
+                                <div class="icon-item-title body-large bold">
+                                    Summarize for a 2nd grader
+                                </div>
+                                <div class="icon-item-desc body-small">
+                                    <a href="/summarize" target="_blank">Translates difficult text into simpler concepts.</a>
+                                </div>
+                           </div> 
+                       </div>
+                        <div role="button" class="icon-item">
+                            <div class="icon-item-icon summariz-icon">
+                                <img  width="50" height="50" src="{{ url_for('static', filename='image_gen.png') }}" class="image_gen_icon" />
+                            </div>
+                            <div class="icon-item-right">
+                                <div class="icon-item-title body-large bold">
+                                    Image Generator
+                                </div>
+                                <div class="icon-item-desc body-small">
+                                    <a href="/img_intro" target="_blank">Generate and edit images.</a>
+                                </div>
+                           </div> 
+ 
+                </div>
+        </div>
+    </body>
+</html>

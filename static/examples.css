@@ -49,12 +49,23 @@ h1 {
 .nav-item {
  padding: 0 10px 0 10px;
 }
+.icon-item{
+ margin-top: 5px;
+}
+.icon-item {
+ display: flex;
+
+}
+
+.icon-item-right {
+ color: #353740
+ #flex: 1 1 auto;
+ padding-left: 16px;
+}
+.icon-item-title {
+ font-weight: bold;
+}
 .text-tagline {
  color: #565869;
  font-size: 18px;
-}
-.ovr-card {
-    border-radius: 40px;
-    height: 164px;
-    width: 100px;
 }

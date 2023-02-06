@@ -1,16 +1,18 @@
 import os
-
 import openai
 from flask import Flask, redirect, render_template, request, url_for
 from fileinput import filename
 
 app = Flask(__name__)
-#openai.api_key = os.getenv("OPENAI_API_KEY")
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.route('/')
 def main():
     return render_template("main.html")
+
+@app.route('/examples')
+def examples():
+    return render_template("examples.html")
 
 @app.route("/animal", methods=['GET', 'POST'])
 def index():

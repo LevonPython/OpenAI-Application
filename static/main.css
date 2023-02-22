@@ -20,8 +20,9 @@ body {
   font-family: "ColfaxAI", Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   padding-top: 10px;
+  margin-left: 20px;
 }
 h1 {
   font-size: 32px;
@@ -31,8 +32,8 @@ h1 {
   margin: 16px 0 40px;
 }
 .pheader{
+ padding-bottom: 10px;
  margin: 0 0 50px 0;
- align-items: left;
  border-bottom: 1px solid #ececf1;
  background-color: #fff;
 }
@@ -40,7 +41,7 @@ h1 {
  display: flex;
 }
 .pheader-nav {
- align-items: center;
+ align-items: start;
  display: flex;
  margin: 0 10px 0 24px;
  color: #6e6e80;
@@ -53,8 +54,44 @@ h1 {
  color: #565869;
  font-size: 18px;
 }
-.ovr-card {
-    border-radius: 40px;
-    height: 164px;
-    width: 100px;
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-wrapper {
+  position: relative;
+  flex: 1 0 50%;
+  display: inline-block;
+  border-radius: 15px;
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-size: 2vw;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1.5%;
+  min-width: 80%;
+  min-height: 70%;
+  max-width: 80%;
+  max-height: 80%;
+  margin-left: auto;
+  border-radius: 15px;
+}
+.image-text:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #e6e6e6
+}
+.nav-item:link, .nav-item:visited
+{
+ color: #565869;
+ text-decoration: none;
+}
+.nav-item:hover{
+ color: #17181c;
 }

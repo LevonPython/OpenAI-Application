@@ -20,8 +20,9 @@ body {
   font-family: "ColfaxAI", Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   padding-top: 10px;
+  margin-left: 20px;
 }
 h1 {
   font-size: 32px;
@@ -31,8 +32,9 @@ h1 {
   margin: 16px 0 40px;
 }
 .pheader{
+ padding-bottom: 10px;
  margin: 0 0 50px 0;
- align-items: left;
+ align-items: start;
  border-bottom: 1px solid #ececf1;
  background-color: #fff;
 }
@@ -49,14 +51,36 @@ h1 {
 .nav-item {
  padding: 0 10px 0 10px;
 }
+.nav-item:link, .nav-item:visited
+{
+ color: #565869;
+ text-decoration: none;
+}
 .icon-item{
- margin-top: 5px;
-}
-.icon-item {
+ margin-top: 0.5%;
  display: flex;
-
+ border: #858585 solid 2px;
+ background-color: #e6e6e6;
+ border-radius: 15px;
+ padding: 1%;
+ width: 50%;
 }
-
+.icon-item:hover {
+ border: #858585 solid 3px;
+ background-color: #737373;
+ color: #fff;
+ }
+.icon-item:hover img.image_gen_icon{
+ content: url(image_gen_hover.png);
+ width: 50px;
+ height: 50px;
+ border-radius: 10px;
+ }
+.icon-item:hover img.dog_icon{
+ content: url(dog-hover.png);
+ width: 50px;
+ height: 50px;
+ }
 .icon-item-right {
  color: #353740
  #flex: 1 1 auto;
@@ -68,4 +92,7 @@ h1 {
 .text-tagline {
  color: #565869;
  font-size: 18px;
+}
+.nav-item:hover{
+ color: #17181c;
 }

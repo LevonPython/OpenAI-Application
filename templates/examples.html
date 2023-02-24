@@ -12,11 +12,14 @@
         <div class="pheader">
             <div class="pheader-container">
                 <div class="pheader-left">
-                    <img width="25px" height="25px" src="{{ url_for('static', filename='chatgpt.png')}}" />
+                    <a href="/">
+                        <img width="25px" height="25px" src="{{ url_for('static', filename='chatgpt.png')}}" />
+                    </a>
                         <div class="pheader-nav pheader-menu-active">
                             <a class="nav-item active" href="/">Overview</a>
-                            <a class="nav-item" href="/docs">Documentation</a>
-                            <a class="nav-item" href="/examples">Examples</a>
+                            <a class="nav-item docs" href="/docs">Documentation</a>
+                            <a class="nav-item examples" href="/examples">Examples</a>
+                            <a class="nav-item about" href="/about">About</a>
                         </div>
                 </div>
                 <div class="pheader-right">

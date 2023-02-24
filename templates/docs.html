@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OpenAI Application Examples</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='docs.css') }}" />
+<link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='chatgpt.png') }}"
+  />
+    </head>
+    <body>
+        <div class="pheader">
+            <div class="pheader-container">
+                <div class="pheader-left">
+                    <a href="/">
+                        <img width="25px" height="25px" src="{{ url_for('static', filename='chatgpt.png')}}" />
+                    </a>
+                        <div class="pheader-nav pheader-menu-active">
+                            <a class="nav-item active" href="/">Overview</a>
+                            <a class="nav-item" href="/docs">Documentation</a>
+                            <a class="nav-item" href="/examples">Examples</a>
+                            <a class="nav-item about" href="/about">About</a>
+                        </div>
+                </div>
+                <div class="pheader-right"> 
+                </div>
+            </div>
+        </div>
+    <div class="wrapper">
+        <div class="docs-navy">
+            <div class="side-nav-section">
+                <div class="side-nav-header subheading">GET STARTED</div>
+                <a class="scroll-link main-blocks" href="#" data-target="body-intro">Introduction</a>
+                <ul class="sub-blocks first-main-block">
+                    <li><a class="scroll-link side-nav-item side-nav-child active" href="/docs#overview">Overview</a></li>
+                    <li><a class="scroll-link side-nav-item side-nav-child" href="/docs#keys">Key concepts</a></li>
+                    <li><a class="scroll-link side-nav-item side-nav-child" href="/docs#nextsteps_intro">Next steps</a></li>
+                </ul>
+            </div>
+            <div class="side-nav-section">
+                <a class="scroll-link main-blocks" href="/docs#quickstart" data-target="body-quickstart">Quickstart</a>
+                <ul class="sub-blocks">
+                    <li><a class="scroll-link side-nav-item side-nav-child active" href="/docs#overview">Overview</a></li>
+                </ul>
+            </div>
+            <div class="side-nav-section"></div>
+            <div class="side-nav-section">
+                <div class="side-nav-header subheading sub-subheadings">GUIDES</div>
+                <a class="scroll-link main-blocks" href="#" data-target="body-intro-guide">Text completion</a>
+                <ul class="sub-blocks">
+                    <li><a class="scroll-link side-nav-item side-nav-child active" href="#">Introduction</a></li>
+                    <li><a class="scroll-link side-nav-item side-nav-child" href="#">Prompt design</a></li>
+                    <li><a class="scroll-link side-nav-item side-nav-child" href="#">Insertin text</a></li>
+                </ul>
+            </div>
+            <div class="side-nav-section">
+                <a class="scroll-link main-blocks" href="#" data-target="body-code-completion">Code completion</a>
+                <ul class="sub-blocks">
+                    <li><a class="scroll-link side-nav-item side-nav-child active" href="#">Introduction</a></li>
+                </ul>
+            </div>
+            <div class="side-nav-section">
+                <a class="scroll-link main-blocks" href="/docs#quickstart" data-target="body-quickstart">Quickstart</a>
+                <ul class="sub-blocks">
+                    <li><a class="scroll-link side-nav-item side-nav-child active" href="/docs#overview">Overview</a></li>
+                </ul>
+            </div>
+            <div class="side-nav-section"></div>
+            <div class="side-nav-section">
+                <div class="side-nav-header subheading sub-subheadings">API REFERENCE</div>
+                <a class="scroll-link main-blocks" href="#" data-target="body-intro-api">Introduction</a>
+                <ul class="sub-blocks">
+                    <li><a class="scroll-link side-nav-item side-nav-child active" href="/docs#overview">Overview</a></li>
+                </ul>
+            </div>
+            <div class="side-nav-section">
+                <a class="scroll-link main-blocks" href="#" data-target="body-intro-auth">Authentication</a>
+                <ul class="sub-blocks">
+                    <li><a class="scroll-link side-nav-item side-nav-child active" href="/docs#overview">Overview</a></li>
+                </ul>
+            </div>
+            <div class="side-nav-section">
+                <a class="scroll-link main-blocks" href="#" data-target="body-intro-make-requests">Making requsts</a>
+                <ul class="sub-blocks">
+                    <li><a class="scroll-link side-nav-item side-nav-child active" href="/docs#overview">Overview</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="docs-body">
+            <h1>OpenAI Documentation</h1>
+                <div class="body-text" id="body-intro">
+                    <h3 id="intro">Introduction</h3>
+                    <h5 id="Overview">Overview</h5>
+                    <p class="desc-text">
+                    The OpenAI API can be applied to virtually any task that involves understanding or generating natural language or code. We offer a spectrum of models with different levels of power suitable for different tasks, as well as the ability to fine-tune your own custom models. These models can be used for everything from content generation to semantic search and classification.
+                    </p>
+                    <h5 id="keys">Key concepts</h5>
+                    <p class="desc-text">We recommend completing our quickstart tutorial to get acquainted with key concepts through a hands-on, interactive example.</p>
+                    <h5>Prompts and completions</h5>
+                    <p class="desc-text">
+                    The completions endpoint is at the center of our API. It provides a simple interface to our models that is extremely flexible and powerful. You input some text as a prompt, and the model will generate a text completion that attempts to match whatever context or pattern you gave it. For example, if you give the API the prompt, “Write a tagline for an ice cream shop”, it will return a completion like “We serve up smiles with every scoop!”
+
+Designing your prompt is essentially how you “program” the model, usually by providing some instructions or a few examples. This is different from most other NLP services which are designed for a single task, such as sentiment classification or named entity recognition. Instead, the completions endpoint can be used for virtually any task including content or code generation, summarization, expansion, conversation, creative writing, style transfer, and more.
+
+                </p>
+                <h5>Models</h5>
+                <p class="desc-text">The API is powered by a set of models with different capabilities and price points. Our base GPT-3 models are called Davinci, Curie, Babbage and Ada. Our Codex series is a descendant of GPT-3 that’s been trained on both natural language and code. To learn more, visit our <a href="#models">models documentation</a>.
+
+                </p>
+                <h5 id="nextsteps_intro">Next steps</h5>
+                <div class="desc-text">
+                    <ul>
+                        <li>Keep our <a href="#usage_policies">usage policies</a> in mind as you start building your application.</li>
+                        <li>Explore our <a href="/examples">examples library</a> for inspiration.</li>
+                        <li>Jump into one of our guides to start building.</li>
+                    </ul>
+                </div>
+                </div>
+                <div class="body-text" id="body-quickstart">
+                    <h3>Quickstart</h3>
+                    <h5>Next steps</h5>
+                        <div class="desc-text">
+                        <p>To get inspired and learn more about designing prompts for different tasks:</p>
+                        <ul>
+                            <li>Read our completion guide.</li>
+                            <li>Explore our library of <a href="/examples">example prompts</a>.</li>
+                            <li>Start experimenting in the <a href="https://platform.openai.com/playground">Playground</a>.</li>
+                            <li>Keep our <a href="#usage_policies">usage policies</a> in mind as you start building.</li>
+                        </ul>
+                        </div>
+                </div>
+                <div class="body-text">
+                    <h3>Libraries</h3>
+                    <p>Some text</p>
+                </div>
+                <div class="body-text">
+                    <h3 id="models">Models</h3>
+                    <p>Some text</p>
+                </div>
+                <div class="body-text">
+                    <h3>Tutorials</h3>
+                    <p>Some text</p>
+                </div>
+                <div class="body-text">
+                    <h3 id="usage_policies">Usage Policies</h3>
+                    <p>Some text</p>
+                </div>
+        </div>
+    </div>
+    <script src="/static/docs.js"></script>
+    </body>
+</html>

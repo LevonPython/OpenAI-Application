@@ -95,3 +95,6 @@ h1 {
 .nav-item:hover{
  color: #17181c;
 }
+.nav-item:active{
+ color: #10a37f;
+}

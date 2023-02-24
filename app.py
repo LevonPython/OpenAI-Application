@@ -14,6 +14,14 @@ def main():
 def examples():
     return render_template("examples.html")
 
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
+@app.route('/docs')
+def docs():
+    return render_template("docs.html")
+
 @app.route("/animal", methods=['GET', 'POST'])
 def index():
     if request.method == "POST":

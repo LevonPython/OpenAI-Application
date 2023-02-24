@@ -1,0 +1,100 @@
+body {
+  font-size: 16px;
+  line-height: 24px;
+  color: #565869;
+  font-family: "ColfaxAI", Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 10px;
+  margin-left: 20px;
+}
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: bold;
+  color: #202123;
+  margin: 16px 0 40px;
+}
+.pheader{
+ padding-bottom: 10px;
+ margin: 0 0 50px 0;
+ border-bottom: 1px solid #ececf1;
+ background-color: #fff;
+}
+.pheader-left{
+ display: flex;
+}
+.pheader-nav {
+ align-items: start;
+ display: flex;
+ margin: 0 10px 0 24px;
+ color: #6e6e80;
+ cursor: pointer;
+}
+.nav-item {
+ padding: 0 10px 0 10px;
+}
+.nav-item:link, .nav-item:visited
+{
+ color: #565869;
+ text-decoration: none;
+}
+.nav-item:hover{
+ color: #17181c;
+}
+.nav-item:active{
+ color: #10a37f;
+}
+.subheading {
+ color: black;
+ font-size: 14px;
+}
+.sub-subheadings {
+ padding-top: 20px;
+}
+.desc-text {
+font-size: 14px;
+}
+.docs-navy {
+ width: 18%;
+ height: 100%;
+ overflow-x: hidden;
+ padding-top: 2%;
+ border-right: 1px solid #ececf1;
+}
+.scroll-link{
+ display: block;
+ color: #565869;
+ text-decoration: none;
+}
+.scroll-link:hover{
+ color: #17181c;;
+}
+.scroll-link:active{
+ background: #e6f3f3;
+ color: #10a37f;
+}
+.sub-blocks {
+  display: none;
+  margin: 0;
+  padding-left: 15px;
+  list-style: none;
+}
+.first-main-block {
+ display:block;
+}
+.docs-body {
+ margin-left: 5%;
+ flex: 1;
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.body-text {
+ display: none;
+}
+#body-intro {
+ display: block;
+}

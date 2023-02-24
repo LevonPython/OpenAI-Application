@@ -42,7 +42,7 @@ h1 {
  display: flex;
 }
 .pheader-nav {
- align-items: center;
+ align-items: start;
  display: flex;
  margin: 0 10px 0 24px;
  color: #6e6e80;
@@ -95,4 +95,7 @@ h1 {
 }
 .nav-item:hover{
  color: #17181c;
+}
+.nav-item:active{
+ color: #10a37f;
 }

@@ -142,6 +142,10 @@ def img_variation():
     result = request.args.get("result")
     return render_template("img_variation.html", result=result)
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
+
 with app.test_request_context('/qa', method='POST'):
     # now you can do something with the request until the
     # end of the with block, such as basic assertions:

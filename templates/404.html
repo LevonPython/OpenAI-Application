@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OpenAI Application Examples</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='404.css') }}" />
+<link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='chatgpt.png') }}"
+  />
+    </head>
+    <body>
+        <div class="pheader">
+            <div class="pheader-container">
+                <div class="pheader-left">
+                    <a href="/">
+                        <img width="25px" height="25px" src="{{ url_for('static', filename='chatgpt.png')}}" />
+                    </a>
+                        <div class="pheader-nav pheader-menu-active">
+                            <a class="nav-item active" href="/">Overview</a>
+                            <a class="nav-item" href="/docs">Documentation</a>
+                            <a class="nav-item" href="/examples">Examples</a>
+                            <a class="nav-item about" href="/about">About</a>
+                        </div>
+                </div>
+                <div class="pheader-right"> 
+                </div>
+            </div>
+        </div>
+        <div class="main_container">
+            <h1>404</h1>
+            <p>Oops! The page you were looking for could not be found.</p>
+            <a class="return_to_home" href="/">Go back to the homepage</a>
+        </div>
+    </body>
+</html>

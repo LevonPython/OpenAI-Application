@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "ColfaxAI";
+  src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2)
+      format("woff2"),
+    url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ColfaxAI";
+  src: url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff2) format("woff2"),
+    url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff) format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+body {
+  font-size: 16px;
+  line-height: 24px;
+  color: #353740;
+  font-family: "ColfaxAI", Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-top: 10px;
+  margin-left: 20px;
+}
+h1 {
+  font-size: 100px;
+  line-height: 40px;
+  font-weight: bold;
+  color: #202123;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px #000;
+}
+p {
+ font-size: 30px;
+ margin-bottom: 30px;
+ text-shadow: 1px 1px #000;
+}
+.return_to_home{
+ display: inline-block;
+ font-size: 20px;
+ color: #fff;
+ background-color: #f44336;
+ border-radius: 5px;
+ padding: 10px 20px;
+ text-decoration: none;
+}
+.return_to_home:hover{
+ background-color: #e53935;
+}
+.pheader{
+ padding-bottom: 10px;
+ margin: 0 0 50px 0;
+ border-bottom: 1px solid #ececf1;
+ background-color: #fff;
+}
+.pheader-left{
+ display: flex;
+}
+.pheader-nav {
+ align-items: start;
+ display: flex;
+ margin: 0 10px 0 24px;
+ color: #6e6e80;
+ cursor: pointer;
+}
+.nav-item {
+ padding: 0 10px 0 10px;
+}
+.nav-item:link, .nav-item:visited
+{
+ color: #565869;
+ text-decoration: none;
+}
+.nav-item:hover{
+ color: #17181c;
+}
+.nav-item:active{
+ color: #10a37f;
+}
+.main_container {
+ margin-top: 100px;
+ text-align: center;
+}

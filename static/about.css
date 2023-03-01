@@ -1,3 +1,4 @@
+@import "base.css";
 body {
   font-size: 16px;
   line-height: 24px;
@@ -16,37 +17,7 @@ h1 {
   color: #202123;
   margin: 16px 0 40px;
 }
-.pheader{
- padding-bottom: 10px;
- margin: 0 0 50px 0;
- border-bottom: 1px solid #ececf1;
- background-color: #fff;
-}
-.pheader-left{
- display: flex;
-}
-.pheader-nav {
- align-items: start;
- display: flex;
- margin: 0 10px 0 24px;
- color: #6e6e80;
- cursor: pointer;
-}
-.nav-item {
- padding: 0 10px 0 10px;
-}
 .text-tagline {
  color: #565869;
  font-size: 18px;
-}
-.nav-item:link, .nav-item:visited
-{
- color: #565869;
- text-decoration: none;
-}
-.nav-item:hover{
- color: #17181c;
-}
-.nav-item:active{
- color: #10a37f;
 }

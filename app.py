@@ -152,3 +152,7 @@ with app.test_request_context('/qa', method='POST'):
     assert request.path == '/qa'
     assert request.method == 'POST'
     print(url_for('qa', result='AAAAAAAAAAAA'))
+
+
+if __name__ == "__main__":
+    app.run(port=int(os.environ.get("PORT", 8080)),host='0.0.0.0',debug=True)

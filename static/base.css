@@ -14,6 +14,7 @@
 }
 .pheader-left, .pheader-right{
  display: inline-flex;
+ align-items: center;
 }
 .pheader-nav {
  align-items: start;
@@ -23,7 +24,7 @@
  cursor: pointer;
 }
 .nav-item {
- padding: 0 10px 0 10px;
+ padding: 5px 10px 5px 10px;
 }
 .pheader-right {
   margin-left: auto;
@@ -38,4 +39,12 @@
 }
 .nav-item:active{
  color: #10a37f;
+}
+.sign-up:link, .sign-up:visited{
+ background-color: #10a37f;
+ border-radius: 5px;
+ color: #fff;
+}
+.sign-up:hover{
+ background-color:#137c62;
 }

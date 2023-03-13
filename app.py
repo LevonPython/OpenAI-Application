@@ -22,6 +22,14 @@ def about():
 def docs():
     return render_template("docs.html")
 
+@app.route('/login')
+def login():
+    return render_template("login.html")
+
+@app.route('/signup')
+def signup():
+    return render_template("signup.html")
+
 @app.route("/animal", methods=['GET', 'POST'])
 def index():
     if request.method == "POST":

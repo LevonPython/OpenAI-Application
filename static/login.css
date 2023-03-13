@@ -1,0 +1,43 @@
+body {
+  font-size: 16px;
+  line-height: 24px;
+  color: #353740;
+  font-family: "ColfaxAI", Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: bold;
+  color: #202123;
+  margin: 16px 0 40px;
+} 
+.text-tagline {
+ color: #565869;
+ font-size: 15px;
+}
+
+.pheader{
+ padding-bottom: 10px;
+ margin: 0 0 50px 0;
+ border-bottom: 1px solid #ececf1;
+ background-color: #fff;
+}
+.main_container{
+ text-align: center;
+}
+.main_container{
+ text-align: center;
+}
+.main_container{
+ text-align: center;
+}
+.username, .pass, .microsoft_submit, .google_submit {
+ padding:10px;
+}
+#username, #pass, #submit{
+ padding: 10px 50px;
+ border-radius: 5px;

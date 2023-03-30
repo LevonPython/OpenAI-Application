@@ -1,33 +1,146 @@
 import os
 import openai
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, redirect, render_template, request, url_for, flash
 from fileinput import filename
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+from werkzeug.security import generate_password_hash, check_password_hash
+import psycopg2
 
 app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
+app.secret_key = 'super secret key'
 
-@app.route('/')
+# Establish a connection to the PostgreSQL database
+conn = psycopg2.connect(
+    host="localhost",
+    database="openaidatabase",
+    user="levonyeghiazaryan"
+    #password="admin"
+)
+
+# Create a cursor object to execute SQL queries
+cur = conn.cursor()
+
+def User():
+    create_query = """CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(80) NOT NULL,
+    password VARCHAR(120) NOT NULL
+);"""
+    cur.execute(create_query)
+    conn.commit()
+    print(f"Table users was succussfully created")
+
+def check_table_exists():
+    cur.execute("select * from information_schema.tables where table_name=%s", ('users',))
+    return bool(cur.rowcount)
+
+def check_user_exists(username):
+    cur.execute("SELECT * FROM users WHERE username=%s", (username, ))
+    return bool(cur.rowcount)
+
+def add_user(username, password):
+    add_query = "INSERT INTO users(username, password) VALUES(%s, %s)"
+    cur.execute(add_query, (username, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)))
+    conn.commit()
+
+def check_user_data(username, password):
+    print("username: ", username, " password: ", password)
+    query = "SELECT password FROM users WHERE username=%s LIMIT 1"
+    cur.execute(query, (username, ))
+    result = cur.fetchone()
+    if result is not None:
+        stored_hashed_password = result[0]
+        if(check_password_hash(stored_hashed_password, password)):
+            return "Password is correct!"
+        else:
+            return "Password is incorrect."
+    else:
+        return "User not found."
+
+@app.route('/', methods=["GET", "POST"])
 def main():
-    return render_template("main.html")
+    if request.method == 'POST':
+        pass
+    username = request.args.get("username")
+    if username is None:
+        username = ''
+    return render_template("main.html", username=username)
 
-@app.route('/examples')
+@app.route('/examples', methods=["GET", "POST"])
 def examples():
-    return render_template("examples.html")
+    username = request.args.get("username")
+    if username is None:
+        username = ''
+    return render_template("examples.html", username=username)
 
-@app.route('/about')
+@app.route('/about', methods=["GET", "POST"])
 def about():
-    return render_template("about.html")
+    username = request.args.get("username")
+    if username is None:
+        username = ''
+    return render_template("about.html", username=username)
 
-@app.route('/docs')
+@app.route('/docs', methods=["GET", "POST"])
 def docs():
-    return render_template("docs.html")
+    username = request.args.get("username")
+    if username is None:
+        username = ''
+    return render_template("docs.html", username=username)
 
-@app.route('/login')
+@app.route('/profile', methods=["GET", "POST"])
+def profile():
+    username = request.args.get("username")
+    if username is None:
+        username = ''
+    return render_template("profile.html", username=username)
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    #if current_user.is_authenticated:
+    #    return redirect(url_for('index'))
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['pass']
+        #remember = True if request.form.get('remember') else False
+
+        #user = User.query.filter_by(username=username).first()
+        #print("check_user_data: ", check_user_data(username, password))
+        data_status = check_user_data(username, password)
+        if data_status != "Password is correct!":
+            flash("Please check your login details and try again")
+            flash(data_status)
+            return redirect(url_for('login'))
+        #if not user or not check_password_hash(user.password, password):
+        #    flash('Please check your login details and try again.')
+        #    return redirect(url_for('login'))
+
+        #login_user(user, remember=remember)
+        return redirect(url_for('main', username=username))
+
     return render_template("login.html")
 
-@app.route('/signup')
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
+    #if current_user.is_authenticated:
+    #    username = request.form['username']
+    #    return redirect(url_for('main', username=username))
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['pass']
+        print(f"username: {username}, password: {password}")
+        if not check_table_exists():
+            User()
+        if check_user_exists(username):
+            flash('Username already exists.')
+            return redirect(url_for('signup'))
+        add_user(username, password)
+        flash(f"User: {username} was successfully created")
+        flash('Now please login')
+        return redirect(url_for('login', username=username))
+    else:
+        print("GET method")
     return render_template("signup.html")
 
 @app.route("/animal", methods=['GET', 'POST'])
@@ -163,4 +276,6 @@ with app.test_request_context('/qa', method='POST'):
 
 
 if __name__ == "__main__":
-    app.run(port=int(os.environ.get("PORT", 8080)),host='0.0.0.0',debug=True)
+    app.run(host='127.0.0.1', port=int(os.environ.get("PORT", 5050)),debug=True)
+    cur.close()
+    conn.close()

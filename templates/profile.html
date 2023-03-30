@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}
+
+        <title>Profile</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+<link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='chatgpt.png') }}"
+  />
+{% endblock %}
+{% block content %}
+        <div class="main_container">
+            <h1>Your Profile Account</h1>
+                <div class="text-tagline">
+                    <h3>Username: {{ username }}</h3>
+                </div>
+        </div>
+{% endblock %}

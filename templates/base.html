@@ -8,21 +8,26 @@
         <div class="pheader">
             <div class="pheader-container">
                 <div class="pheader-left">
-                    <a href="/">
+                    <a href="/?username={{username}}">
                         <img width="25px" height="25px" src="{{ url_for('static', filename='chatgpt.png')}}" />
                     </a>
                         <div class="pheader-nav pheader-menu-active">
-                            <a class="nav-item active" href="/">Overview</a>
-                            <a class="nav-item" href="/docs">Documentation</a>
-                            <a class="nav-item" href="/examples">Examples</a>
-                            <a class="nav-item about" href="/about">About</a>
+                            <a class="nav-item active" href="/?username={{username}}">Overview</a>
+                            <a class="nav-item" href="/docs?username={{username}}" >Documentation</a>
+                            <a class="nav-item" href="/examples?username={{username}}">Examples</a>
+                            <a class="nav-item about" href="/about?username={{username}}">About</a>
                         </div>
                 </div>
                 <div class="pheader-center">
                 </div>
                 <div class="pheader-right"> 
+                    {% if username %}
+                    <a class="nav-item log-in" href="/profile?username={{username}}">Hello {{ username }}!</a>
+                    <a class="nav-item sign-up" href="/">Log out</a>
+                    {% else %}
                     <a class="nav-item log-in" href="/login">Log in</a>
                     <a class="nav-item sign-up" href="/signup">Sign up</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

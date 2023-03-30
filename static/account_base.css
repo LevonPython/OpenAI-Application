@@ -1,0 +1,95 @@
+body {
+  font-size: 16px;
+  line-height: 24px;
+  color: #353740;
+  font-family: "ColfaxAI", Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: bold;
+  color: #202123;
+  margin: 16px 0 40px;
+} 
+.text-tagline {
+ color: #565869;
+ font-size: 15px;
+}
+
+.pheader{
+ padding-bottom: 10px;
+ margin: 0 0 50px 0;
+ border-bottom: 1px solid #ececf1;
+ background-color: #fff;
+}
+.main_container{
+ text-align: center;
+}
+.username, .pass, .microsoft_submit_div, .google_submit_div {
+ padding:10px;
+}
+#username, #pass, #submit{
+ font-size: 16px;
+ padding: 15px;
+ border: solid 1px #c2c8d0;
+ border-radius: 5px;
+ width: 265px;
+ max-width: 265px;
+ height: 20px;
+ max-height: 20px;
+ } 
+#username:focus, #pass:focus {
+ transition: 0.3s;
+ border: 2px solid #10a37f;
+ outline: none;
+}
+#submit {
+ width: 300px;
+ max-width: 300px;
+ height: 50px;
+ max-height: 50px;
+}
+.register-submit{
+ background-color:#10a37f;
+ color: white;
+}
+.register-submit:hover{
+ background-color: #0c7d62;
+ box-shadow: 5px 10px;
+}
+.microsoft_submit, .google_submit {
+ background-color: white;
+}
+.microsoft_submit:hover, .google_submit:hover {
+ background-color: #d7dee7;
+}
+.or {
+ font-size: 13px;
+ display: flex;
+ align-items: center;
+ margin-top: 10px;
+}
+.dont_have_account{
+ margin: 10px 0px;
+}
+.signup:link, .signup:visited, .login:link, .login:visited
+{
+ color: #10a37f;
+ text-decoration: none;
+}
+.signup:hover, .login:hover{
+ color: #1f6654;
+}
+.signup:active, .login:active{
+ color: #1f6654;
+}
+.line {
+ flex: 1;
+ height: 1px;
+ margin: 0 10px;
+ background-color: #c2c8d0;
+}

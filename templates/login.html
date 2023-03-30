@@ -22,12 +22,21 @@
         </header>
         <div class="main_container">
             <h1>Welcome back</h1>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                    <div class="message_flash">{{ message }}</div>
+                {% endfor %}
+                </ul>
+                {% endif %}
+            {% endwith %}
                 <div class="text-tagline">
                 </div>
-                <form method="POST" class="login_form" action="/sugnup/email">
+                <form method="POST" class="login_form" action="/login">
                     <div class="username">
                     <label for="username"></label>
-                    <input name="username" id="username" type="text" placeholder="Email" size="15"  autofocus required>
+                    <input name="username" id="username" type="text" placeholder="Email address" size="15"  autofocus required>
                     </div>
                     <div class="pass">
                     <label for="pass"></label>
@@ -36,27 +45,30 @@
                     </div>
                     <div class="submit">
                     <label for="submit"></label>
-                    <input name="submit" id="submit" type="submit" value="Submit">
+                    <input name="submit" id="submit" type="submit" class="register-submit" value="Submit">
                     </div>
                 </form>
                 <div class="text-tagline dont_have_account">
-                    Don't have an account? <a href="/signup">Sign up</a>
+                    Don't have an account? <a class="signup" href="/signup">Sign up</a>
                 </div>
 
                 <div class="text-tagline or">
-                    --------- OR --------- 
+                    <div class="line"></div>
+                    <div class="text"> OR </div>
+                    <div class="line"></div>
                 </div>
-                <div class="google_submit">
-                <button id="submit" type="submit">
+                <div class="google_submit_div">
+                <button id="submit" class="google_submit" type="submit">
                     <span>Continue with Google</span>
                 </button>
                 </div>
-                <div class="microsoft_submit">
-                <button id="submit" type="submit">
+                <div class="microsoft_submit_div">
+                <button id="submit" class="microsoft_submit" type="submit">
                     <span>Continue with Microsoft Account</span>
                 </button>
                 </div>
         </div>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/login.js"></script>
 </body>
 </html>

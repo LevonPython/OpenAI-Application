@@ -22,13 +22,22 @@
         </header>
         <div class="main_container">
             <h1>Create your account</h1>
+             {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class="flashes">
+                {% for message in messages %}
+                    <div class="message_flash">{{ message }}</div>
+                {% endfor %}
+                </ul>
+                {% endif %}
+            {% endwith %}
                 <div class="text-tagline">
-                    <p>Please note that phone verification is required for signup. <br/>Your number will only be used to verify your identity for security purposes.</p>
+                    <p class="create_account_descr">Please note that phone verification is required for signup.Your number will only be used to verify your identity for security purposes.</p>
                 </div>
-                <form method="POST" class="login_form" action="/sugnup/email">
+                <form method="POST" class="login_form" action="/signup">
                     <div class="username">
                     <label for="username"></label>
-                    <input name="username" id="username" type="text" placeholder="Email" size="15"  autofocus required>
+                    <input name="username" id="username" type="text" placeholder="Email address" size="15"  autofocus required>
                     </div>
                     <div class="pass">
                     <label for="pass"></label>
@@ -37,27 +46,30 @@
                     </div>
                     <div class="submit">
                     <label for="submit"></label>
-                    <input name="submit" id="submit" type="submit" value="Submit">
+                    <input name="submit" id="submit" class="register-submit" type="submit" value="Submit">
                     </div>
                 </form>
                 <div class="text-tagline dont_have_account">
-                    Already have an account? <a href="/login">Login</a>
+                    Already have an account? <a class="login"  href="/login">Login</a>
                 </div>
 
                 <div class="text-tagline or">
-                    --------- OR --------- 
+                    <div class="line"></div>
+                    <div class="text"> OR </div>
+                    <div class="line"></div>
                 </div>
-                <div class="google_submit">
-                <button id="submit" type="submit">
+                <div class="google_submit_div">
+                <button id="submit" class="google_submit" type="submit">
                     <span>Continue with Google</span>
                 </button>
                 </div>
-                <div class="microsoft_submit">
-                <button id="submit" type="submit">
+                <div class="microsoft_submit_div">
+                <button id="submit" class="microsoft_submit" type="submit">
                     <span>Continue with Microsoft Account</span>
                 </button>
                 </div>
         </div>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/signup.js"></script>
 </body>
 </html>

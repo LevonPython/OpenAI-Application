@@ -45,6 +45,11 @@ def add_user(username, password):
     cur.execute(add_query, (username, generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)))
     conn.commit()
 
+def delete_user(username):
+    add_query = "DELETE FROM users WHERE username=%s"
+    cur.execute(add_query, (username, ))
+    conn.commit()
+
 def check_user_data(username, password):
     print("username: ", username, " password: ", password)
     query = "SELECT password FROM users WHERE username=%s LIMIT 1"
@@ -92,8 +97,18 @@ def docs():
 @app.route('/profile', methods=["GET", "POST"])
 def profile():
     username = request.args.get("username")
+    usernametobedeleted = request.args.get("usernametobedeleted")
+    print("username: ", username)
     if username is None:
         username = ''
+    elif username == 'deleted':
+        if check_user_exists(usernametobedeleted):
+            delete_user(usernametobedeleted)
+            flash(f"User was succesfully deleted")
+            return redirect(url_for('profile'))
+        else:
+            flash(f"User was already deleted!")
+            return redirect(url_for('profile'))
     return render_template("profile.html", username=username)
 
 @app.route('/login', methods=['GET', 'POST'])

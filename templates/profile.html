@@ -2,7 +2,7 @@
 {% block title %}
 
         <title>Profile</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}" />
 <link
     rel="shortcut icon"
     href="{{ url_for('static', filename='chatgpt.png') }}"
@@ -11,8 +11,29 @@
 {% block content %}
         <div class="main_container">
             <h1>Your Profile Account</h1>
+            {% if username == ''  %} 
+                <h3>
+                <div class="text-tagline">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <ul class="flashes">
+                    {% for message in messages %}
+                        <div class="message_flash">{{ message }}</div>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}
+                </div>
+                </h3>
+            {% else %}
                 <div class="text-tagline">
                     <h3>Username: {{ username }}</h3>
                 </div>
+                <div class="delete_profile">
+                    <a class="delete_profile_bttn" href="/profile?username=deleted&usernametobedeleted={{ username }}">Delete Profile</a>    
+                </div>
+            {% endif %}
         </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/flash.js"></script>
 {% endblock %}

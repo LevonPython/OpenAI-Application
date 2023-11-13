@@ -3,7 +3,7 @@ This GitHub project is a web application built on the Flask framework and utiliz
 
 In addition to the core functionalities, the project includes the following chapters:
 - comprehensive documentation,
-[<img src="https://github.com/LevonPython/OpenAI-Application/blob/main/static/readme_screenshots/Documentation%20page%20Screenshot.png">]
+<img src="/static/readme_screenshots/Documentation%20page%20Screenshot.png">
 - an overview of the application, 
 - examples, 
 Notably, the example section showcases the integration of various OpenAI features using the ChatGPT API.

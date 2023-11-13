@@ -3,7 +3,7 @@ This GitHub project is a web application built on the Flask framework and utiliz
 
 ## Web site structure 
 In addition to the core functionalities, the project includes the following chapters:
-- comprehensive documentation
+- comprehensive documentation 
    <img src="/static/readme_screenshots/Documentation%20page%20Screenshot.png">
 - an overview of the application
   <img src="/static/readme_screenshots/Main%20Page%20Screenshot.png">
@@ -28,7 +28,7 @@ The OpenAI-powered features demonstrate the capabilities of the application, suc
 
 By combining Flask, PostgreSQL, and the OpenAI ChatGPT API, this project provides a robust foundation for building web applications with user account management capabilities. 
   <img src="/static/readme_screenshots/Login%20Page%20Screenshot.png" height="500" width="500">
-  <img src="/static/readme_screenshots/Profile%20Page%20Screenshot.png" height="500" width="500">
+  <img src="/static/readme_screenshots/Profile%20Page%20Screenshot.png">
 The inclusion of extensive documentation ensures that developers can easily understand and extend the functionality of the application.
 
 

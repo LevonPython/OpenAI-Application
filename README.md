@@ -1,16 +1,21 @@
+# OpenAI API Application 
 This GitHub project is a web application built on the Flask framework and utilizes a PostgreSQL database. The website provides essential functionalities for creating and deleting user accounts, incorporating all the necessary minimal requirements.
 
-In addition to the core functionalities, the project includes comprehensive documentation, an overview of the application, examples, and an "About" section. Notably, the example section showcases the integration of various OpenAI features using the ChatGPT API.
+In addition to the core functionalities, the project includes the following chapters:
+- comprehensive documentation,
+<a href="https://github.com/LevonPython/OpenAI-Application/blob/main/static/readme_screenshots/Documentation%20page%20Screenshot.png"><img src="Documentation image></img></a>
+- an overview of the application, 
+- examples, 
+Notably, the example section showcases the integration of various OpenAI features using the ChatGPT API.
+- "About" section. 
 
 The OpenAI-powered features demonstrate the capabilities of the application, such as generating pet names or dynamically generating pictures based on text input. These features leverage the powerful language model provided by OpenAI to enhance the user experience and add an innovative touch to the website.
 
 By combining Flask, PostgreSQL, and the OpenAI ChatGPT API, this project provides a robust foundation for building web applications with user account management capabilities. The inclusion of extensive documentation ensures that developers can easily understand and extend the functionality of the application.
 
 
-Regenerate response
-# OpenAI API Quickstart - Python example app
 
-This is an example pet name generator app used in the OpenAI API [quickstart tutorial](https://beta.openai.com/docs/quickstart). It uses the [Flask](https://flask.palletsprojects.com/en/2.0.x/) web framework. Check out the tutorial or follow the instructions below to get set up.
+# OpenAI API Quickstart 
 
 ## Setup
 

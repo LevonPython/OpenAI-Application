@@ -11,7 +11,7 @@ This is an example pet name generator app used in the OpenAI API [quickstart tut
 3. Navigate into the project directory
 
    ```bash
-   $ cd openai-quickstart-python
+   $ cd OpenAI-Application
    ```
 
 4. Create a new virtual environment
@@ -35,7 +35,10 @@ This is an example pet name generator app used in the OpenAI API [quickstart tut
 
 7. Add your [API key](https://beta.openai.com/account/api-keys) to the newly created `.env` file
 
-8. Run the app
+8. Before Running the app, you should run the POSTRE_SQL database server.
+ To do this go to POSTGRE_REDAME.md file and execute 1, 2 steps.
+
+9. Run the app
 
    ```bash
    $ flask run

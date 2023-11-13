@@ -7,8 +7,10 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user, login_
 from werkzeug.security import generate_password_hash, check_password_hash
 import psycopg2
 
+# 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
 app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
+# search it in this file: vim  ~/.bash_profile
 app.secret_key = 'super secret key'
 
 # Establish a connection to the PostgreSQL database

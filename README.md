@@ -23,7 +23,7 @@ The OpenAI-powered features demonstrate the capabilities of the application, suc
   <img src="/static/readme_screenshots/Examples%20-%20Summarize%20name%20page%20Screenshot.png" height="500" width="500">
 - dynamically generating pictures based on text input <br />
   <img src="/static/readme_screenshots/Examples%20-%20image%20generate%20page%20Screenshot.png" height="500" width="500">
-  <img src="/static/readme_screenshots/Examples%20-%20image%20generate%20create%20image%20page%20Screenshot.png" height="500" width="700">
+  <img src="/static/readme_screenshots/Examples%20-%20image%20generate%20create%20image%20page%20Screenshot.png" height="500" width="700"> <br />
   These features leverage the powerful language model provided by OpenAI to enhance the user experience and add an innovative touch to the website.
 
 By combining Flask, PostgreSQL, and the OpenAI ChatGPT API, this project provides a robust foundation for building web applications with user account management capabilities. 
@@ -69,7 +69,7 @@ The inclusion of extensive documentation ensures that developers can easily unde
 7. Add your [API key](https://beta.openai.com/account/api-keys) to the newly created `.env` file
 
 8. Before Running the app, you should run the POSTRE_SQL database server.
- To do this go to [POSTGRE_REDAME.md](/POSTGRE%20REDAME.md) file and execute 1, 2 steps.
+ To do this go to [POSTGRE_REDAME.md](/POSTGRE_REDAME.md) file and execute 1, 2 steps.
 
 9. Run the app
 

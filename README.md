@@ -2,16 +2,22 @@
 This GitHub project is a web application built on the Flask framework and utilizes a PostgreSQL database. The website provides essential functionalities for creating and deleting user accounts, incorporating all the necessary minimal requirements.
 
 In addition to the core functionalities, the project includes the following chapters:
-- comprehensive documentation,
-<img src="/static/readme_screenshots/Documentation%20page%20Screenshot.png">
-- an overview of the application, 
-- examples, 
+- comprehensive documentation
+   <img src="/static/readme_screenshots/Documentation%20page%20Screenshot.png">
+- an overview of the application
+  <img src="/static/readme_screenshots/Main%20Page%20Screenshot.png">
+- examples
+  <img src="/static/readme_screenshots/Examples%20page%20Screenshot.png"> 
 Notably, the example section showcases the integration of various OpenAI features using the ChatGPT API.
-- "About" section. 
+- "About" section.
+  <img src="/static/readme_screenshots/Documentation%20page%20Screenshot.png">
 
 The OpenAI-powered features demonstrate the capabilities of the application, such as generating pet names or dynamically generating pictures based on text input. These features leverage the powerful language model provided by OpenAI to enhance the user experience and add an innovative touch to the website.
 
-By combining Flask, PostgreSQL, and the OpenAI ChatGPT API, this project provides a robust foundation for building web applications with user account management capabilities. The inclusion of extensive documentation ensures that developers can easily understand and extend the functionality of the application.
+By combining Flask, PostgreSQL, and the OpenAI ChatGPT API, this project provides a robust foundation for building web applications with user account management capabilities. 
+  <img src="/static/readme_screenshots/Login%20Page%20Screenshot.png">
+  <img src="/static/readme_screenshots/Profile%20Page%20Screenshot.png">
+The inclusion of extensive documentation ensures that developers can easily understand and extend the functionality of the application.
 
 
 
